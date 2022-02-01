@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'date'
+
+POSTS_DIR = '_posts/'
+post = ARGV[0]
+File.open(POSTS_DIR + Date.today.strftime("%Y-%m-%d-") + post + '.md', 'w') {|f| f.write(
+  "---\nlayout: post\nsection-type: post\ntitle: \"Title\"\ncategory: Algorithm\ntags: [ 'algorithm', 'python' ]\ncomments: true\n---\n# 목표: \n# 조건:\n# solution 설명 :\n")
+}
+puts('[+] Created ' + post + ' post')
